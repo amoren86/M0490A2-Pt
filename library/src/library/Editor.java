@@ -13,13 +13,6 @@ public class Editor extends Thread {
 
 	@Override
 	public void run() {
-		try {
-			// Editor lifecycle: start writing, edit books, stop writing
-			library.startWriting(name);
-			library.editBooks(name);
-			library.stopWriting(name);
-		} catch (InterruptedException e) {
-			Thread.currentThread().interrupt();
-		}
+		library.editBooks(name);
 	}
 }

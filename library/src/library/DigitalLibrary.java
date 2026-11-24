@@ -29,26 +29,9 @@ public class DigitalLibrary {
 	// TODO: Implement synchronization mechanisms, when necessary, to ensure thread
 	// safety
 
-	// --- Readers section ---
-	public void startReading(String readerName) throws InterruptedException {
-		// TODO: Wait if an editor is currently writing. Otherwise, increase the number
-		// of active readers
-	}
-
 	public void readBooks(String readerName) {
 		// TODO: Simulate reading by printing the list of books. (Use Thread.sleep() to
 		// simulate reading time)
-	}
-
-	public void stopReading(String readerName) {
-		// TODO: Decrease number of readers. If there are no more readers, notify
-		// waiting editors
-	}
-
-	// --- Editors section ---
-	public void startWriting(String editorName) throws InterruptedException {
-		// TODO: Wait while there are readers or another editor writing. Set writing =
-		// true
 	}
 
 	public void editBooks(String editorName) {
@@ -56,7 +39,22 @@ public class DigitalLibrary {
 		// made
 	}
 
-	public void stopWriting(String editorName) {
+	private void startReading(String readerName) throws InterruptedException {
+		// TODO: Wait if an editor is currently writing. Otherwise, increase the number
+		// of active readers
+	}
+
+	private void stopReading(String readerName) {
+		// TODO: Decrease number of readers. If there are no more readers, notify
+		// waiting editors
+	}
+
+	private void startWriting(String editorName) throws InterruptedException {
+		// TODO: Wait while there are readers or another editor writing. Set writing =
+		// true
+	}
+
+	private void stopWriting(String editorName) {
 		// TODO: Set writing = false and notify all waiting threads
 	}
 }
